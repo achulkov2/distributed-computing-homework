@@ -40,14 +40,14 @@ Implements an API for a simple online-store.
 * **Returns**: Modified item.
 
 ### getItems
-* **Description**: Get a list of all items.
+* **Description**: Get a list of all items sorted by id.
 * **HTTP request**: GET
 * **URL**: /api/items
 * **Return type**: JSON
 * **Returns**: List of requested items.
 
 ### getItemsPage
-* **Description**: Ge a list of items with pagination. Splits the results into pages of the provided size and returns the requested page. 
+* **Description**: Ge a list of items with pagination. Splits the items sorted by id into pages of the provided size and returns the requested page. 
 * **HTTP request**: GET
 * **URL**: /api/items/list?{page}&{page_size}
 * **Return type**: JSON
@@ -59,3 +59,7 @@ Implements an API for a simple online-store.
 * **URL**: /api/items/{id}
 * **Return type**: JSON
 * **Returns**: Requested item.
+
+## Postman documentation
+
+The postman documentation can be found [here](https://documenter.getpostman.com/view/2187543/SzRxUpvr).
