@@ -3,6 +3,7 @@
 ## Description 
 First part of my homework for the Distributed Computing course.
 Implements an API for a simple online-store.
+Objects are stored in a PostgreSQL database.
 
 ## Objects
 
