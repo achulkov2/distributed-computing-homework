@@ -26,7 +26,7 @@ def item_by_id(request, item_id):
 
     elif request.method == 'DELETE':
         item.delete()
-        return HttpResponse("Item with id {} was successfully deleted\n".format(item_id))
+        return JsonResponse({"response": "Successfully deleted", "id": item_id})
     elif request.method != 'GET':
         return HttpResponseBadRequest('Only GET, PUT and DELETE requests are accepted.\n')
     return JsonResponse(model_to_dict(item))
