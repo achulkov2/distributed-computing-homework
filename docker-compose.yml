@@ -10,7 +10,9 @@ services:
   web:
     build: .
     command: >
-      sh -c "python manage.py migrate &&
+      sh -c "chmod +x wait-for-postgres.sh &&
+             ./wait-for-postgres.sh db:5432 &&
+             python manage.py migrate &&
              python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/code
