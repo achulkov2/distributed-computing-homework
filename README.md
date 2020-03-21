@@ -97,4 +97,4 @@ Objects are stored in a PostgreSQL database.
 
 ## Postman documentation
 
-The postman documentation can be found [here](https://documenter.getpostman.com/view/2187543/SzRxUpvr).
+The postman documentation dump can be found [here](online-shop.postman_collection.json).
