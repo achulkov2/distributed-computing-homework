@@ -21,7 +21,7 @@ Objects are stored in a PostgreSQL database.
 * **Description**: Adds an item to the store.
 * **HTTP request**: POST
 * **URL**: /api/items
-* **Required body parameters**: name, code, category
+* **Required body JSON parameters**: name, code, category
 * **Return type**: JSON
 * **Returns**: Created item.
 
@@ -36,7 +36,7 @@ Objects are stored in a PostgreSQL database.
 * **Description**: Update item info.
 * **HTTP request**: PUT
 * **URL**: /api/items/{id}
-* **Accepted body parameters**: name, code, category
+* **Accepted body JSON parameters**: name, code, category
 * **Return type**: JSON
 * **Returns**: Modified item.
 
@@ -60,6 +60,40 @@ Objects are stored in a PostgreSQL database.
 * **URL**: /api/items/{id}
 * **Return type**: JSON
 * **Returns**: Requested item.
+
+## Authentication API
+
+### registerUser
+* **Description**: Register a new user.
+* **HTTP request**: POST
+* **URL**: /auth/signup
+* **Required body JSON parameters**: username, email, password
+* **Return type**: JSON
+* **Returns**: Created user. The password is hashed.
+
+### getAuthTokens
+* **Description**: Exchange credentials for a pair of tokens.
+* **HTTP request**: POST
+* **URL**: /auth/login
+* **Required body JSON parameters**: username, password
+* **Return type**: JSON
+* **Returns**: A pair of access and refresh tokens with a lifetime of 5 minutes and 1 day accordingly.
+
+### refreshAuthTokens
+* **Description**: Request a new pair of token using the refresh token.
+* **HTTP request**: POST
+* **URL**: /auth/refresh
+* **Required body JSON parameters**: refresh
+* **Return type**: JSON
+* **Returns**: A new pair of access and refresh tokens with a lifetime of 5 minutes and 1 day accordingly.
+
+### validateToken
+* **Description**: Request a new pair of token using the refresh token.
+* **HTTP request**: POST
+* **URL**: /auth/validate
+* **Required body JSON parameters**: token
+* **Return type**: JSON
+* **Returns**: A response indicating whether the token is valid.
 
 ## Postman documentation
 
