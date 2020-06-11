@@ -1,4 +1,4 @@
-"""online-store URL Configuration
+"""upload URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -16,6 +16,5 @@ Including another URLconf
 from django.urls import path, include
 
 urlpatterns = [
-    path('api/', include('backend.urls'), name='api'),
-    path('auth/', include('authentication.urls'), name='auth')
+    path('upload/', include('backend.urls'), name='auth')
 ]
